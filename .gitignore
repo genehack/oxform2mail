@@ -1,0 +1,3 @@
+.build
+OXform2email-*
+!releases/*.tar.gz

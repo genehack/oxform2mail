@@ -1,0 +1,5 @@
+---
+verifier_config:
+
+cache_dir: /tmp/oxform2email
+template_root: tx

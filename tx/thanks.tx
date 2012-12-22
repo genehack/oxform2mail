@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><: $title :></title>
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><: $title :></h1>
+
+      <p><a href="<: uri_for( 'index' )">Return to comment form</a></p>
+    </div>
+  </body>
+</html>
