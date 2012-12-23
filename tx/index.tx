@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title><: $title :></title>
-    <link rel="stylesheet" href="./css/bootstrap.css" media="screen" />
-  </head>
-  <body>
-    <div class="container">
+: my $title = 'We Welcome Your Feedback'
+: cascade wrapper { title => $title }
+
+: override content -> {
       <h1><: $title :></h1>
-
-      <form action="<: uri_for( 'post' ) :>" method="POST">
-
-        <label class="text">Your name: <input type="text" /></label>
-        <label class="text">Your email: <input type="text" /></label>
-        Your comment:
-        <textarea rows="4"></textarea>
-
-        <input class="btn btn-primary" type="submit" value="Give Us Your Thoughts" />
+: if( $dv and ! $dv.success ) {
+      <h2 class="error">ERROR!</h2>
+: }
+      <form class="form-horizontal" action="<: $r.uri_for( 'index' ) :>" method="POST">
+: textfield( 'name' , 'Your name' );
+: textfield( 'email' , 'Your email' );
+: textarea( 'comment' , 'Your comment' );
+: submit( 'submit' , 'Give Us Your Thoughts' );
       </form>
-    </div>
-  </body>
-</html>
+: }

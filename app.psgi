@@ -14,4 +14,4 @@ my $config_file = "$FindBin::Bin/oxform2email.yaml";
 my $config = LoadFile( $config_file ) // {}
   if( -e $config_file );
 
-OXauth->new( $config )->to_app;
+OXform2email->new( $config )->to_app;

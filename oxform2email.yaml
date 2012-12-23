@@ -1,5 +1,19 @@
 ---
+email_to: genehack@genehack.org
+email_subject: "Don't forget to change the email address!"
 verifier_config:
-
+  filters:
+    - trim
+  profile:
+    name:
+      required: 1
+      type: Str
+    email:
+      required: 1
+      type: Str
+    comment:
+      required: 1
+      type: Str
 cache_dir: /tmp/oxform2email
+static_root: ./static
 template_root: tx
