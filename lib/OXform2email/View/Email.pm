@@ -6,6 +6,7 @@ use Email::Sender::Simple qw/ sendmail /;
 use Email::Simple;
 use Email::Simple::Creator;
 
+has email_from    => ( is => 'ro' , isa => 'Str' , required => 1 );
 has email_subject => ( is => 'ro' , isa => 'Str' , required => 1 );
 has email_to      => ( is => 'ro' , isa => 'Str' , required => 1 );
 
@@ -17,7 +18,7 @@ sub send_email {
   my $email = Email::Simple->create(
     header => [
       To      => $self->email_to ,
-      From    => '"OX Form2Email" <donotreply@example.com>' ,
+      From    => $self->email_from,
       Subject => $self->email_subject ,
     ] ,
     body => $body ,

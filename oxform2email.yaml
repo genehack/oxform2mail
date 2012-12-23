@@ -1,6 +1,7 @@
 ---
-email_to: genehack@genehack.org
-email_subject: "Don't forget to change the email address!"
+email_from: '"OX Form2Email" <donotreply@example.com>'
+email_to: example@example.com
+email_subject: "More Awesome User Feedback"
 verifier_config:
   filters:
     - trim

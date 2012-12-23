@@ -1,5 +1,5 @@
 : my $title = 'We Welcome Your Feedback'
-: cascade wrapper { title => $title }
+: cascade wrapper with macros { title => $title }
 
 : override content -> {
       <h1><: $title :></h1>

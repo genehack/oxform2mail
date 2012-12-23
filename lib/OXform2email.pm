@@ -3,13 +3,14 @@ package OXform2email;
 use OX;
 use 5.016;
 
+has email_from    => ( is => 'ro' , isa => 'Str' , required => 1 );
 has email_subject => ( is => 'ro' , isa => 'Str' , required => 1 );
 has email_to      => ( is => 'ro' , isa => 'Str' , required => 1 );
 
 has email_view =>(
   is           => 'ro' ,
   isa          => 'OXform2email::View::Email' ,
-  dependencies => [ qw/ email_subject email_to / ] ,
+  dependencies => [ qw/ email_from email_subject email_to / ] ,
 );
 
 has cache_dir     => ( is => 'ro' , isa => 'Str' , required => 1 );

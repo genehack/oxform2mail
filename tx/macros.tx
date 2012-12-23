@@ -1,0 +1,39 @@
+: macro textfield -> ( $name , $label ) {
+<div class="control-group
+: if ( $dv.is_invalid( $name ) or $dv.is_missing( $name )) {
+error
+: }
+">
+  <label class="control-label" for="<: $name :>"><: $label :></label>
+  <div class="controls">
+    <input type="text" name="<: $name :>" value="<: $dv.get_value( $name ) :>" />
+: if ( $dv.is_invalid( $name ) or $dv.is_missing( $name )) {
+  <span class="help-inline">Required field</span>
+: }
+  </div>
+</div>
+: }
+
+: macro textarea -> ( $name , $label ) {
+<div class="control-group
+: if ( $dv.is_invalid( $name ) or $dv.is_missing( $name )) {
+error
+: }
+">
+  <label class="control-label" for="<: $name :>"><: $label :></label>
+  <div class="controls">
+    <textarea rows="4" name="<: $name :>"><: $dv.get_value( $name ) :></textarea>
+: if ( $dv.is_invalid( $name ) or $dv.is_missing( $name )) {
+  <span class="help-inline">Required field</span>
+: }
+  </div>
+</div>
+: }
+
+: macro submit -> ( $name , $label ) {
+<div class="control group">
+  <div class="controls">
+    <input class="btn btn-primary" type="submit" name="<: $name :>" value="<: $label :>" />
+  </div>
+</div>
+: }
